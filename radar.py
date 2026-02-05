@@ -15,7 +15,7 @@ import argparse
 from datetime import datetime
 
 from db import init_db, save_tender, get_unsent, mark_sent, get_all_tenders
-from scrapers import jobinrwanda, tenderafrica, reliefweb, google_search
+from scrapers import jobinrwanda, brightermonday, devex, tenderafrica, reliefweb, google_search
 from config import SOURCES
 from emailer import send_email
 
@@ -28,6 +28,18 @@ def run_scrapers():
         print("[Scraper] Fetching from JobInRwanda...")
         tenders = jobinrwanda.fetch()
         print(f"[Scraper] Found {len(tenders)} matching tenders from JobInRwanda")
+        all_tenders.extend(tenders)
+
+    if SOURCES.get("brightermonday"):
+        print("[Scraper] Fetching from BrighterMonday (Kenya, Uganda, Tanzania)...")
+        tenders = brightermonday.fetch()
+        print(f"[Scraper] Found {len(tenders)} matching tenders from BrighterMonday")
+        all_tenders.extend(tenders)
+
+    if SOURCES.get("devex"):
+        print("[Scraper] Fetching from Devex...")
+        tenders = devex.fetch()
+        print(f"[Scraper] Found {len(tenders)} matching tenders from Devex")
         all_tenders.extend(tenders)
 
     if SOURCES.get("tenderafrica"):

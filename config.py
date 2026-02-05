@@ -23,17 +23,17 @@ KEYWORDS = [
     "online platform",
 ]
 
-# Email settings - use environment variables for security
+# SendGrid settings - use environment variables for security
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY", "")
+SENDGRID_TEMPLATE_ID = os.environ.get("SENDGRID_TEMPLATE_ID", "d-11064e123cf445bcab85f0d5fd2c4ec9")
 EMAIL_FROM = os.environ.get("EMAIL_FROM", "alerts@kamagram.com")
 EMAIL_TO = os.environ.get("EMAIL_TO", "marvin@kamagram.com")
-SMTP_SERVER = os.environ.get("SMTP_SERVER", "smtp.gmail.com")
-SMTP_PORT = int(os.environ.get("SMTP_PORT", 587))
-SMTP_USER = os.environ.get("SMTP_USER", "alerts@kamagram.com")
-SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "")
 
 # Sources to enable/disable
 SOURCES = {
     "jobinrwanda": True,
+    "brightermonday": True,  # East Africa: Kenya, Uganda, Tanzania
+    "devex": False,  # Requires JavaScript rendering - use google_search instead
     "tenderafrica": False,  # Site currently returning 404
     "reliefweb": False,  # Requires RELIEFWEB_APPNAME (register at apidoc.reliefweb.int)
     "google_search": False,  # Requires GOOGLE_API_KEY and GOOGLE_CSE_ID
