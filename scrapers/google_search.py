@@ -22,14 +22,14 @@ from config import KEYWORDS
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 GOOGLE_CSE_ID = os.environ.get("GOOGLE_CSE_ID", "")
 
-# Sites to search within
+# Sites to search within (excluding sites with dedicated scrapers)
 SITES_TO_SEARCH = [
-    "jobinrwanda.com",
     "devex.com",
     "reliefweb.int",
     "etenders.gov.za",
     "ungm.org",
     "worldbank.org",
+    "afdb.org",
 ]
 
 

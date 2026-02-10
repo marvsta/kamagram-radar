@@ -1,25 +1,40 @@
 import os
 
-# Keywords relevant to Kamagram
+# Keywords relevant to Kamagram - focused on software/web development
 KEYWORDS = [
+    # Web & Mobile
     "website",
+    "web developer",
     "web development",
     "web application",
     "mobile app",
-    "software development",
-    "digital platform",
-    "system development",
-    "IT consultancy",
     "app development",
-    "digital solution",
-    "IT services",
-    "IT equipment",
-    "IT system",
-    "information technology",
-    "ICT",
-    "database",
+    "android",
+    "ios app",
+    # Software
+    "software developer",
+    "software development",
+    "software engineer",
+    "programmer",
+    "coding",
+    # IT specific (avoid broad "IT" alone)
+    "ICT officer",
+    "ICT manager",
+    "ICT technician",
+    "ICT consultant",
+    "IT consultant",
+    "IT officer",
+    "IT manager",
+    # Database & Backend
+    "database administrator",
+    "database developer",
+    "backend developer",
+    "frontend developer",
+    "full stack",
+    "fullstack",
+    # Digital
+    "digital platform",
     "e-commerce",
-    "portal",
     "online platform",
 ]
 
@@ -36,7 +51,7 @@ SOURCES = {
     "devex": False,  # Requires JavaScript rendering - use google_search instead
     "tenderafrica": False,  # Site currently returning 404
     "reliefweb": False,  # Requires RELIEFWEB_APPNAME (register at apidoc.reliefweb.int)
-    "google_search": False,  # Requires GOOGLE_API_KEY and GOOGLE_CSE_ID
+    "google_search": False,  # Requires Google Cloud billing
 }
 
 # Google Custom Search settings (optional)
